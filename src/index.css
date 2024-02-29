@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply text-fuchsia-900;
+}
+
+body {
+  @apply bg-fuchsia-100;
+}
+
+h1 {
+  @apply text-3xl  font-medium;
+}
+
+h2 {
+  @apply text-xl font-medium;
+}
+
+p {
+  @apply text-lg font-normal;
+}
