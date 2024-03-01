@@ -3,12 +3,12 @@ import ListPokemons_memo_useMemo from './ListPokemons_memo_useMemo';
 import PropTypes from 'prop-types';
 
 export default function Exemple_useMemo_memo({ pokemons }) {
-  const [pokemonFilterExemple2, setPokemonFilteredExemple2] = useState('all');
+  const [pokemonFilterExemple, setPokemonFilteredExemple] = useState('all');
 
-  const [isBackGroundExemple2, setIsBackGroundExemple2] = useState(false);
+  const [isBackGroundExemple, setIsBackGroundExemple] = useState(false);
 
-  const handleButtonClickExemple2 = (e) => {
-    setPokemonFilteredExemple2(e.currentTarget.value);
+  const handleButtonClickExemple = (e) => {
+    setPokemonFilteredExemple(e.currentTarget.value);
   };
 
   return (
@@ -20,44 +20,44 @@ export default function Exemple_useMemo_memo({ pokemons }) {
           Fond de couleur{' '}
           <input
             type="checkbox"
-            onChange={() => setIsBackGroundExemple2((prev) => !prev)}
-            checked={isBackGroundExemple2}
+            onChange={() => setIsBackGroundExemple((prev) => !prev)}
+            checked={isBackGroundExemple}
           />
         </label>
         <div className="flex gap-4 mx-auto px-2">
           <button
             className={`px-3 py-2 bg-fuchsia-300 text-fuchsia-900 rounded-md hover:bg-fuchsia-200 transition-all ${
-              pokemonFilterExemple2 === 'all' ? 'bg-fuchsia-200' : null
+              pokemonFilterExemple === 'all' ? 'bg-fuchsia-200' : null
             }`}
             value="all"
-            onClick={handleButtonClickExemple2}
+            onClick={handleButtonClickExemple}
           >
             Tous
           </button>
           <button
             className={`px-3 py-2 bg-fuchsia-300 text-fuchsia-900 rounded-md hover:bg-fuchsia-200 transition-all ${
-              pokemonFilterExemple2 === 'catched' ? 'bg-fuchsia-200' : null
+              pokemonFilterExemple === 'catched' ? 'bg-fuchsia-200' : null
             }`}
             value="catched"
-            onClick={handleButtonClickExemple2}
+            onClick={handleButtonClickExemple}
           >
             Attrapé(s)
           </button>
           <button
             className={`px-3 py-2 bg-fuchsia-300 text-fuchsia-900 rounded-md hover:bg-fuchsia-200 transition-all ${
-              pokemonFilterExemple2 === 'uncatched' ? 'bg-fuchsia-200' : null
+              pokemonFilterExemple === 'uncatched' ? 'bg-fuchsia-200' : null
             }`}
             value="uncatched"
-            onClick={handleButtonClickExemple2}
+            onClick={handleButtonClickExemple}
           >
             Non attrapé(s)
           </button>
         </div>
 
         <ListPokemons_memo_useMemo
-          background={isBackGroundExemple2}
+          background={isBackGroundExemple}
           pokemons={pokemons}
-          filter={pokemonFilterExemple2}
+          filter={pokemonFilterExemple}
         />
       </div>
     </div>
