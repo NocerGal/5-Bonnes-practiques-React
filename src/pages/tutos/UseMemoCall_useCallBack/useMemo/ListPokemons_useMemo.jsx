@@ -4,11 +4,11 @@ import { pokemonListFiltered } from '../../../../utils';
 
 export default function ListPokemons_useMemo({ filter, pokemons, background }) {
   const pokemonsVisible = useMemo(() => {
+    console.log('fonction conservant les pokemons filtrés');
     return pokemonListFiltered(filter, pokemons);
   }, [filter, pokemons]);
 
-  console.log('list pokemons');
-
+  console.log('rendu du composant enfant');
   return (
     <div
       className={`flex flex-col gap-2  max-w-screen-xl mx-4 rounded-lg ${
