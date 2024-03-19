@@ -1,14 +1,15 @@
+/* eslint-disable no-unused-vars */
 import PropTypes from 'prop-types';
 import { useMemo } from 'react';
 import { pokemonListFiltered } from '../../../../utils';
 
 export default function ListPokemons_useMemo({ filter, pokemons, background }) {
-  const pokemonsVisible = useMemo(() => {
+  const pokemonsVisibles = useMemo(() => {
     console.log('fonction conservant les pokemons filtrés');
     return pokemonListFiltered(filter, pokemons);
   }, [filter, pokemons]);
 
-  console.log('rendu du composant enfant');
+  console.log('rendu du composant listant les pokemons');
   return (
     <div
       className={`flex flex-col gap-2  max-w-screen-xl mx-4 rounded-lg ${
@@ -16,7 +17,7 @@ export default function ListPokemons_useMemo({ filter, pokemons, background }) {
       }`}
     >
       <ul className="flex justify-center flex-wrap">
-        {pokemonsVisible.map((pokemon) => (
+        {pokemonsVisibles.map((pokemon) => (
           <li className="flex items-center flex-col h-32" key={pokemon.id}>
             <img src={pokemon.image} alt={pokemon.nom} />
           </li>

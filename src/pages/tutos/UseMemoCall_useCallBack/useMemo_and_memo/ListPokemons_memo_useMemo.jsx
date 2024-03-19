@@ -9,10 +9,11 @@ export default function ListPokemons_memo_useMemo({
   background,
 }) {
   const pokemonsVisible = useMemo(() => {
+    console.log('usememo');
     return pokemonListFiltered(filter, pokemons);
   }, [filter, pokemons]);
 
-  console.log('pokemons lsit');
+  console.log('ListPokemon composant');
 
   return (
     <div

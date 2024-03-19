@@ -9,6 +9,7 @@ export default function Exemple_useMemo({ pokemons }) {
   const handleButtonClickExemple = (e) => {
     setPokemonFilteredExemple(e.currentTarget.value);
   };
+
   return (
     <div className="flex flex-col items-center justify-center gap-8 mt-28 ">
       <h2>UseMemo</h2>

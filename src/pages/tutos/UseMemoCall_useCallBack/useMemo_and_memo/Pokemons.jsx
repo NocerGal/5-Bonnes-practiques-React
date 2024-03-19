@@ -1,8 +1,8 @@
-import { memo } from 'react';
 import PropTypes from 'prop-types';
+import { memo } from 'react';
 
 export const Pokemons = memo(function Pokemons({ pokemons }) {
-  console.log('pokemons');
+  console.log('pokemons memo');
   return (
     <ul className="flex justify-center flex-wrap">
       {pokemons.map((pokemon) => (

@@ -14,7 +14,11 @@ export default function Home() {
             <LinkToTuto to="/jsx/useMemoAndCallBack">
               <p>UseMemo and useCallBack</p>
             </LinkToTuto>
-            <LinkToTuto to="/jsx/conditionnalRendering">
+            <LinkToTuto to="/jsx/useReducer">
+              <p>useReducer</p>
+            </LinkToTuto>
+
+            {/* <LinkToTuto to="/jsx/conditionnalRendering">
               <p>Conditionnal rendering</p>
             </LinkToTuto>
             <LinkToTuto to="/jsx/forwardRef">
@@ -25,7 +29,7 @@ export default function Home() {
             </LinkToTuto>
             <LinkToTuto to="/jsx/debouce">
               <p>Debounce</p>
-            </LinkToTuto>
+            </LinkToTuto> */}
           </div>
         </div>
 
@@ -35,7 +39,7 @@ export default function Home() {
             <LinkToTuto to="/tsx/useMemoAndCallBack">
               <p>UseMemo and useCallBack</p>
             </LinkToTuto>
-            <LinkToTuto to="/tsx/conditionnalRendering">
+            {/* <LinkToTuto to="/tsx/conditionnalRendering">
               <p>Conditionnal rendering</p>
             </LinkToTuto>
             <LinkToTuto to="/tsx/forwardRef">
@@ -46,7 +50,7 @@ export default function Home() {
             </LinkToTuto>
             <LinkToTuto to="/tsx/debouce">
               <p>Debounce</p>
-            </LinkToTuto>
+            </LinkToTuto> */}
           </div>
         </div>
       </div>
