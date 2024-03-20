@@ -17,6 +17,9 @@ export default function Home() {
             <LinkToTuto to="/jsx/useReducer">
               <p>useReducer</p>
             </LinkToTuto>
+            <LinkToTuto to="/tsx/useTransition">
+              <p>useTransition</p>
+            </LinkToTuto>
 
             {/* <LinkToTuto to="/jsx/conditionnalRendering">
               <p>Conditionnal rendering</p>

@@ -12,7 +12,10 @@ import ForWardRefInTsxPage from './pages/tutos in tsx/ForwardRef';
 import UseContextInTsxPage from './pages/tutos in tsx/UseContext';
 import DebounceInTsxPage from './pages/tutos in tsx/Debounce';
 import UseMemoAndCallBackPage from './pages/tutos/UseMemoCall_useCallBack/UseMemoAndCallBack';
-import Exemple_Use_Reducer from './pages/tutos/useReducer/Exemple_useReducer';
+
+import UseReducerPage from './pages/tutos/useReducer/UseReducerPage';
+
+import UseTransitionPage from './pages/tutos/useTransition/UseTransitionPage';
 
 export default function Router() {
   return (
@@ -22,7 +25,8 @@ export default function Router() {
         path="/jsx/useMemoAndCallBack"
         element={<UseMemoAndCallBackPage />}
       />
-      <Route path="/jsx/useReducer" element={<Exemple_Use_Reducer />} />
+      <Route path="/jsx/useReducer" element={<UseReducerPage />} />
+      <Route path="/tsx/useTransition" element={<UseTransitionPage />} />
 
       <Route
         path="/tsx/useMemoAndCallBack"

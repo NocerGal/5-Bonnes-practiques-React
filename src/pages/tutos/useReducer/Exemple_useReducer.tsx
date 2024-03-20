@@ -1,34 +1,37 @@
 import React, { useReducer } from 'react';
-import { pokemonList, pokemonListFiltered } from '../../../utils';
+import { pokemonListFiltered } from '../../../utils';
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'ADD_POKEMON': {
+      return { ...state, pokemons: [...state.pokemons, action.payload] };
+    }
+    case 'REMOVE_POKEMON':
+      const newPokemonsList = {
+        ...state,
+        pokemons: state.pokemons.filter(
+          (pokemon) => pokemon.catched.pokemonUniqueId !== action.payload
+        ),
+      };
+      return newPokemonsList;
+    case 'SET_FILTER': {
+      return {
+        ...state,
+        filter: action.payload,
+      };
+    }
+    default:
+      return state;
+  }
+}
 
 export default function Exemple_Use_Reducer({ pokemons }) {
-  const { sachaPokemons } = pokemonList();
+  const pokemonList = pokemons;
+
   const [state, dispatch] = useReducer(reducer, {
-    pokemons: sachaPokemons,
+    pokemons: pokemonList,
     filter: 'all',
   });
-
-  function reducer(state, action) {
-    switch (action.type) {
-      case 'ADD_POKEMON': {
-        return { ...state, pokemons: [...state.pokemons, action.payload] };
-      }
-      case 'REMOVE_POKEMON':
-        return {
-          ...state,
-          pokemons: state.pokemons.filter(
-            (pokemon) => pokemon.catched.pokemonUniqueId !== action.payload
-          ),
-        };
-      case 'SET_FILTER':
-        return {
-          ...state,
-          filter: action.payload,
-        };
-      default:
-        return state;
-    }
-  }
 
   const handlerAddPokemon = async (e) => {
     e.preventDefault();
@@ -58,7 +61,7 @@ export default function Exemple_Use_Reducer({ pokemons }) {
     dispatch({ type: 'SET_FILTER', payload: filter });
   };
 
-  const fileredPokemon = pokemonListFiltered(state.filter, sachaPokemons);
+  const fileredPokemon = pokemonListFiltered(state.filter, state.pokemons);
 
   return (
     <div className="flex flex-col items-center justify-center gap-8 mt-28 ">
